@@ -1,12 +1,13 @@
 package com.tinyurl;
 
-import org.springframework.boot.CommandLineRunner;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+
 
 /**
  * Created by leoz on 10/14/17.
@@ -17,12 +18,10 @@ import org.springframework.context.annotation.Configuration;
 @SpringBootConfiguration
 public class Application {
 
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
-    }
+    private static final Logger logger = LoggerFactory.getLogger(Application.class);
 
-    @Bean
-    CommandLineRunner init() {
-        return (evt) -> { };
+    public static void main(String[] args) {
+        logger.info("Service is starting...");
+        SpringApplication.run(Application.class, args);
     }
 }
