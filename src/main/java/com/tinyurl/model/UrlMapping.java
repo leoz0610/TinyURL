@@ -16,15 +16,13 @@ public class UrlMapping {
     private Long id;
     private String longUrl;
 
-    protected UrlMapping() { }
-
-    public UrlMapping(String longUrl) {
-        this.longUrl = longUrl;
-    }
-
     public Long getId() { return id; }
 
     public String getLongUrl() { return longUrl; }
+
+    public void setId(Long id) { this.id = id; }
+
+    public void setLongUrl(String url) { this.longUrl = url; }
 
     @Override
     public String toString() {

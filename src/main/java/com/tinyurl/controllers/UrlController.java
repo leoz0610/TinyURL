@@ -24,7 +24,10 @@ public class UrlController {
 
     @RequestMapping(method = RequestMethod.POST, value = "/{longUrl}")
     public UrlMapping postUrl(@PathVariable String longUrl) {
-        return null;
+        UrlMapping mapping = new UrlMapping();
+        mapping.setLongUrl(longUrl);
+        urlMappingRepository.save(mapping);
+        return mapping;
     }
 
 
